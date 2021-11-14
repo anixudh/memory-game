@@ -20,8 +20,10 @@
   transition: transform 0.2s;
 }
 
-.card:hover {
-  transform: scale(1.25);
+@media all and (min-width: 650px) {
+  .card:hover {
+    transform: scale(1.25);
+  }
 }
 
 @media only screen and (max-width: 650px) {
@@ -30,8 +32,8 @@
   }
   .card {
     font-size: 12px;
-    width: 70px;
-    height: 80px;
+    width: 80px;
+    height: 100px;
     margin: 10px;
   }
 }
