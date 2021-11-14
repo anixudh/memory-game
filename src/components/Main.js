@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardGird } from "./Cards/CardGrid";
+import { ScoreBoard } from "./ScoreBoard/ScoreBoard";
 
 export const Main = () => {
   const pokemonCount = 12;
@@ -34,19 +35,34 @@ export const Main = () => {
       pokemons.push({ id, name, image });
     }
 
-    //console.log(pokemons);
     return pokemons;
   };
+  const resetGame = () => {
+    setCurrentScore(0);
+    setClickedPokemons([]);
+  };
 
-  const playGame = (pokemonName) => {};
+  const playGame = (pokemonName) => {
+    if (clickedPokemons.includes(pokemonName)) resetGame();
+    else {
+      const newScore = currentScore + 1;
+
+      if (newScore > bestScore) setBestScore(newScore);
+
+      setCurrentScore(newScore);
+    }
+    setClickedPokemons((prevState) => [...prevState, pokemonName]);
+    console.log(currentScore, bestScore);
+  };
 
   const handleCardClick = (e) => {
     let pokemonName = e.target.parentNode.lastChild.textContent;
     playGame(pokemonName);
-    shuffleArray(pokemons);
+    setPokemons(shuffleArray(pokemons));
   };
   return (
     <div className="main">
+      <ScoreBoard currentScore={currentScore} bestScore={bestScore} />
       <CardGird pokemons={pokemons} handleCardClick={handleCardClick} />
     </div>
   );

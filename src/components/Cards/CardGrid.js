@@ -1,4 +1,5 @@
 import { Card } from "./Card";
+import "./CardGrid.css";
 export const CardGird = ({ pokemons, handleCardClick }) => {
   const cardGrid = pokemons.map((pokemon) => {
     return (
