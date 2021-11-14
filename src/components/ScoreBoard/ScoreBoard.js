@@ -1,3 +1,4 @@
+import "./ScoreBoard.css";
 export const ScoreBoard = ({ currentScore, bestScore }) => {
   return (
     <div className="scoreboard">

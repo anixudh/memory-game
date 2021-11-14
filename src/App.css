@@ -1,0 +1,44 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(63, 62, 62);
+}
+.pokemon-logo {
+  width: 400px;
+}
+.memory-game-logo {
+  width: 180px;
+  height: 100px;
+}
+.header {
+  background-color: maroon;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(185, 184, 184, 0.637);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.github-logo {
+  width: 20px;
+  height: 20px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
